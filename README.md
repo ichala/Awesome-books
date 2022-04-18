@@ -10,10 +10,6 @@
 - CSS3
 - JavaScript
 
-## Live Demo
-
-[Live Demo Link](#)
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
