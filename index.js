@@ -1,37 +1,39 @@
-let saved_books = localStorage.getItem("save");
+/* eslint-disable  no-restricted-globals */
+/* eslint-disable  no-unused-vars */
+const SavedBooks = localStorage.getItem('save');
 let ourBooks = [];
-if (saved_books) {
-  ourBooks = JSON.parse(saved_books);
+if (SavedBooks) {
+  ourBooks = JSON.parse(SavedBooks);
 } else {
-  demo_data = [
+  const DemoData = [
     {
       id: 1,
-      name: "Book1",
-      author: "Author1",
+      name: 'Book1',
+      author: 'Author1',
     },
     {
       id: 2,
-      name: "Book2",
-      author: "Author2",
+      name: 'Book2',
+      author: 'Author2',
     },
   ];
-  localStorage.setItem("save", JSON.stringify(demo_data));
-  ourBooks = JSON.parse(saved_books);
+  localStorage.setItem('save', JSON.stringify(DemoData));
+  ourBooks = JSON.parse(SavedBooks);
   location.reload();
 }
 
 // Display Books
-const BookList = document.querySelector("#book-list");
+const BookList = document.querySelector('#book-list');
 ourBooks.forEach((book) => {
-  let new_book = ` 
+  const NewBook = ` 
  <p>${book.name}</p>
  <p>${book.author}</p>
  <button onclick=RemoveBook(${book.id}) >Remove</button>
  <hr>
  `;
-  let Singlebook = document.createElement("div");
-  Singlebook.classList.add("single-book");
-  Singlebook.innerHTML = new_book;
+  const Singlebook = document.createElement('div');
+  Singlebook.classList.add('single-book');
+  Singlebook.innerHTML = NewBook;
   BookList.appendChild(Singlebook);
 });
 
@@ -40,25 +42,24 @@ function RemoveBook(id) {
   ourBooks = ourBooks.filter((book) => {
     if (id === book.id) {
       return false;
-    } else {
-      return true;
     }
+    return true;
   });
-  localStorage.setItem("save", JSON.stringify(ourBooks));
+  localStorage.setItem('save', JSON.stringify(ourBooks));
   location.reload();
 }
 // Add Books
 
-const AddBtn = document.querySelector("#add_Button");
-AddBtn.addEventListener("click", () => {
-  let name = document.querySelector("#title").value;
-  let author = document.querySelector("#author").value;
-  let id = ourBooks[ourBooks.length - 1].id + 1;
+const AddBtn = document.querySelector('#add_Button');
+AddBtn.addEventListener('click', () => {
+  const name = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const id = ourBooks[ourBooks.length - 1].id + 1;
   ourBooks.push({
     id,
     name,
     author,
   });
-  localStorage.setItem("save", JSON.stringify(ourBooks));
+  localStorage.setItem('save', JSON.stringify(ourBooks));
   location.reload();
 });
