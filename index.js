@@ -1,5 +1,4 @@
-const ourBooks = [
-  {
+let ourBooks = [{
     id: 1,
     name: "Book1",
     author: "Author1",
@@ -42,5 +41,14 @@ ourBooks.forEach((book) => {
 });
 
 // Remove Books
-
+function RemoveBook(id) {
+  ourBooks = ourBooks.filter(book => {
+    if (id === book.id) {
+      return false;
+    } else {
+      return true;
+    }
+  })
+  console.log(ourBooks);
+}
 // Add Books
