@@ -55,8 +55,8 @@ AddBtn.addEventListener('click', () => {
   const name = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
   let id = 0;
-  if (ourBooks.length>0) {
-     id = ourBooks[ourBooks.length - 1].id + 1;
+  if (ourBooks.length > 0) {
+    id = ourBooks[ourBooks.length - 1].id + 1;
   }
   ourBooks.push({
     id,
