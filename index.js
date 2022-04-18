@@ -1,29 +1,24 @@
-let ourBooks = [{
-    id: 1,
-    name: "Book1",
-    author: "Author1",
-  },
-  {
-    id: 2,
-    name: "Book2",
-    author: "Author2",
-  },
-  {
-    id: 3,
-    name: "Book3",
-    author: "Author3",
-  },
-  {
-    id: 4,
-    name: "Book4",
-    author: "Author4",
-  },
-  {
-    id: 5,
-    name: "Book5",
-    author: "Autho5",
-  },
-];
+let saved_books = localStorage.getItem("save");
+let ourBooks = [];
+if (saved_books) {
+  ourBooks = JSON.parse(saved_books);
+} else {
+  demo_data = [
+    {
+      id: 1,
+      name: "Book1",
+      author: "Author1",
+    },
+    {
+      id: 2,
+      name: "Book2",
+      author: "Author2",
+    },
+  ];
+  localStorage.setItem("save", JSON.stringify(demo_data));
+  ourBooks = JSON.parse(saved_books);
+  location.reload();
+}
 
 // Display Books
 const BookList = document.querySelector("#book-list");
@@ -42,13 +37,28 @@ ourBooks.forEach((book) => {
 
 // Remove Books
 function RemoveBook(id) {
-  ourBooks = ourBooks.filter(book => {
+  ourBooks = ourBooks.filter((book) => {
     if (id === book.id) {
       return false;
     } else {
       return true;
     }
-  })
-  console.log(ourBooks);
+  });
+  localStorage.setItem("save", JSON.stringify(ourBooks));
+  location.reload();
 }
 // Add Books
+
+const AddBtn = document.querySelector("#add_Button");
+AddBtn.addEventListener("click", () => {
+  let name = document.querySelector("#title").value;
+  let author = document.querySelector("#author").value;
+  let id = ourBooks[ourBooks.length - 1].id + 1;
+  ourBooks.push({
+    id,
+    name,
+    author,
+  });
+  localStorage.setItem("save", JSON.stringify(ourBooks));
+  location.reload();
+});
