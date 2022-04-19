@@ -1,6 +1,7 @@
 /* eslint-disable  no-restricted-globals */
 /* eslint-disable  no-unused-vars */
-/*eslint-disable class-methods-use-this*/
+/* eslint-disable class-methods-use-this */
+/* eslint-disable max-classes-per-file */
 class SingleBook {
   constructor(id, name, author) {
     this.id = id;
@@ -11,20 +12,21 @@ class SingleBook {
 
 class ManageBooks {
   constructor() {
-    this.book_list = localStorage.getItem("save")
-      ? JSON.parse(localStorage.getItem("save"))
+    this.book_list = localStorage.getItem('save')
+      ? JSON.parse(localStorage.getItem('save'))
       : [];
   }
+
   display() {
-    const BookList = document.querySelector("#book-list");
+    const BookList = document.querySelector('#book-list');
     if (this.book_list) {
       this.book_list.forEach((book) => {
         const NewBook = ` 
        <p>"${book.name}" by ${book.author}</p>
        <button onclick=RemoveBook(${book.id}) >Remove</button>
        `;
-        const Singlebook = document.createElement("div");
-        Singlebook.classList.add("single-book");
+        const Singlebook = document.createElement('div');
+        Singlebook.classList.add('single-book');
         Singlebook.innerHTML = NewBook;
         BookList.appendChild(Singlebook);
       });
@@ -42,7 +44,7 @@ class ManageBooks {
   }
 
   LocalSave(arr) {
-    localStorage.setItem("save", JSON.stringify(arr));
+    localStorage.setItem('save', JSON.stringify(arr));
     location.reload();
   }
 
@@ -57,13 +59,13 @@ class ManageBooks {
   }
 }
 
-let books = new ManageBooks();
+const books = new ManageBooks();
 books.display();
 
-const AddBtn = document.querySelector("#add_Button");
-AddBtn.addEventListener("click", () => {
-  const name = document.querySelector("#title").value;
-  const author = document.querySelector("#author").value;
+const AddBtn = document.querySelector('#add_Button');
+AddBtn.addEventListener('click', () => {
+  const name = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
   books.add(name, author);
 });
 
