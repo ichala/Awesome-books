@@ -1,3 +1,5 @@
+/* eslint-disable  no-restricted-globals */
+/* eslint-disable  no-unused-vars */
 class SingleBook {
   constructor(id, name, author) {
     this.id = id;
