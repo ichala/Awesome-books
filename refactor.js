@@ -1,10 +1,68 @@
 class SingleBook {
   constructor(id, name, author) {
     this.id = id;
-    this.bookName = name;
+    this.name = name;
     this.author = author;
-    //Delete books
-    // deleteBook() {}
-
   }
 }
+
+class ManageBooks {
+  constructor() {
+    this.book_list = localStorage.getItem("save")
+      ? JSON.parse(localStorage.getItem("save"))
+      : [];
+  }
+  display() {
+    const BookList = document.querySelector("#book-list");
+    if (this.book_list) {
+      this.book_list.forEach((book) => {
+        const NewBook = ` 
+       <p>${book.name}</p>
+       <p>${book.author}</p>
+       <button onclick=RemoveBook(${book.id}) >Remove</button>
+       <hr>
+       `;
+        const Singlebook = document.createElement("div");
+        Singlebook.classList.add("single-book");
+        Singlebook.innerHTML = NewBook;
+        BookList.appendChild(Singlebook);
+      });
+    }
+  }
+
+  add(name, author) {
+    let id = 0;
+    if (this.book_list.length > 0) {
+      id = this.book_list[this.book_list.length - 1].id + 1;
+    }
+    const NewBook= new SingleBook(id,name,author)
+    this.book_list.push(NewBook);
+    this.LocalSave(this.book_list);
+  }
+
+  LocalSave(arr){
+    localStorage.setItem('save',JSON.stringify(arr));
+    location.reload();
+  }
+}
+
+let books = new ManageBooks();
+books.display();
+
+const AddBtn = document.querySelector("#add_Button");
+AddBtn.addEventListener("click", () => {
+  const name = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  books.add(name, author);
+  // let id = 0;
+  // if (ourBooks.length > 0) {
+  //   id = ourBooks[ourBooks.length - 1].id + 1;
+  // }
+  // ourBooks.push({
+  //   id,
+  //   name,
+  //   author,
+  // });
+  // localStorage.setItem('save', JSON.stringify(ourBooks));
+  // location.reload();
+});

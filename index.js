@@ -24,6 +24,7 @@ if (SavedBooks) {
 
 // Display Books
 const BookList = document.querySelector('#book-list');
+if(ourBooks){
 ourBooks.forEach((book) => {
   const NewBook = ` 
  <p>${book.name}</p>
@@ -35,7 +36,7 @@ ourBooks.forEach((book) => {
   Singlebook.classList.add('single-book');
   Singlebook.innerHTML = NewBook;
   BookList.appendChild(Singlebook);
-});
+});}
 
 // Remove Books
 function RemoveBook(id) {
