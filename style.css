@@ -68,3 +68,10 @@ hr {
 .container #add-section .input-button-wrapper input::placeholder {
   color: black;
 }
+
+#add_Button {
+  margin-right: 20px;
+  border: 2px solid black;
+  box-shadow: 5px 5px black;
+  padding: 5px;
+}

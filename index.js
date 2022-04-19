@@ -24,19 +24,20 @@ if (SavedBooks) {
 
 // Display Books
 const BookList = document.querySelector('#book-list');
-if(ourBooks){
-ourBooks.forEach((book) => {
-  const NewBook = ` 
+if (ourBooks) {
+  ourBooks.forEach((book) => {
+    const NewBook = ` 
  <p>${book.name}</p>
  <p>${book.author}</p>
  <button onclick=RemoveBook(${book.id}) >Remove</button>
  <hr>
  `;
-  const Singlebook = document.createElement('div');
-  Singlebook.classList.add('single-book');
-  Singlebook.innerHTML = NewBook;
-  BookList.appendChild(Singlebook);
-});}
+    const Singlebook = document.createElement('div');
+    Singlebook.classList.add('single-book');
+    Singlebook.innerHTML = NewBook;
+    BookList.appendChild(Singlebook);
+  });
+}
 
 // Remove Books
 function RemoveBook(id) {
