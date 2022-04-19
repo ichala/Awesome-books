@@ -72,3 +72,7 @@ AddBtn.addEventListener('click', () => {
 function RemoveBook(id) {
   books.delete(id);
 }
+
+//Last modified
+let lastMod = document.querySelector('#last-modified');
+lastMod.innerHTML = document.lastModified;
