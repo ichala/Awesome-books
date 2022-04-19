@@ -87,43 +87,45 @@ header nav ul li:last-child a {
   padding: 5px;
 }
 
-/* Add Section */
-hr {
-  margin-top: 20px;
-  width: 15%;
-  border-radius: 50%;
-  border-color: black;
-  border-style: groove;
-}
-
-.list #add-section {
+/* Add New Section */
+#add-new #add-section {
   margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 50%;
 }
 
-.list #add-section .input-button-wrapper {
+#add-new #add-section h1 {
+  margin-bottom: 60px;
+}
+
+#add-new #add-section .input-button-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  width: 100%;
+  gap: 50px;
 }
 
-.list #add-section .input-button-wrapper input {
+#add-new #add-section .input-button-wrapper input {
   border: 5px solid black;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.list #add-section .input-button-wrapper input::placeholder {
+#add-new #add-section .input-button-wrapper input::placeholder {
   color: black;
 }
 
-.list #add-section #add_Button {
+#add-new #add-section #add_Button {
   align-self: flex-end;
   border: 2px solid black;
   box-shadow: 5px 5px black;
-  padding: 5px;
+  padding: 10px 15px;
 }
+/* Add New Section */
+
+
 
 footer {
   display: block;
