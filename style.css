@@ -69,8 +69,8 @@ hr {
   color: black;
 }
 
-#add_Button {
-  margin-right: 20px;
+.container #add-section #add_Button {
+  align-self: flex-end;
   border: 2px solid black;
   box-shadow: 5px 5px black;
   padding: 5px;
