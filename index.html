@@ -6,18 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Awesome Books</h1>
-    <div id="book-list">
+    <div class="container">
+        <h1>All awesome books</h1>
+        <div id="book-list">
 
+        </div>
+        <hr>
+        <div id="add-section">
+            <h2>Add a new book</h2>
+            <div class="input-button-wrapper">
+            <input id="title" type="text" placeholder="Title">
+            <input id="author" type="text" placeholder="Author Name">
+            <button id="add_Button">Add</button>
+        </div>  
+        </div>
     </div>
-    <input id="title" type="text" placeholder="Title">
-    <input id="author" type="text" placeholder="Author Name">
-    <button id="add_Button">Add</button>
 
-    <script src="index.js"></script>
+    <script src="refactor.js"></script>
 </body>
 
 </html>
