@@ -8,9 +8,9 @@ class SingleBook {
 
 class ManageBooks {
   constructor() {
-    this.book_list = localStorage.getItem("save")
-      ? JSON.parse(localStorage.getItem("save"))
-      : [];
+    this.book_list = localStorage.getItem("save") ?
+      JSON.parse(localStorage.getItem("save")) :
+      [];
   }
   display() {
     const BookList = document.querySelector("#book-list");
@@ -35,15 +35,26 @@ class ManageBooks {
     if (this.book_list.length > 0) {
       id = this.book_list[this.book_list.length - 1].id + 1;
     }
-    const NewBook= new SingleBook(id,name,author)
+    const NewBook = new SingleBook(id, name, author)
     this.book_list.push(NewBook);
     this.LocalSave(this.book_list);
   }
 
-  LocalSave(arr){
-    localStorage.setItem('save',JSON.stringify(arr));
+  LocalSave(arr) {
+    localStorage.setItem('save', JSON.stringify(arr));
     location.reload();
   }
+
+  delete(id) {
+    this.book_list = this.book_list.filter((book) => {
+      if (id === book.id) {
+        return false;
+      }
+      return true;
+    });
+    this.LocalSave(this.book_list);
+  }
+
 }
 
 let books = new ManageBooks();
@@ -54,15 +65,9 @@ AddBtn.addEventListener("click", () => {
   const name = document.querySelector("#title").value;
   const author = document.querySelector("#author").value;
   books.add(name, author);
-  // let id = 0;
-  // if (ourBooks.length > 0) {
-  //   id = ourBooks[ourBooks.length - 1].id + 1;
-  // }
-  // ourBooks.push({
-  //   id,
-  //   name,
-  //   author,
-  // });
-  // localStorage.setItem('save', JSON.stringify(ourBooks));
-  // location.reload();
 });
+
+function RemoveBook(id) {
+  books.delete(id);
+
+}
