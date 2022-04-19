@@ -52,14 +52,12 @@ hr {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
 .container #add-section .input-button-wrapper {
   display: flex;
   flex-direction: column;
   gap: 15px;
-
 }
 
 .container #add-section .input-button-wrapper input {
@@ -70,11 +68,3 @@ hr {
 .container #add-section .input-button-wrapper input::placeholder {
   color: black;
 }
-
-#add_Button {
-  border: 2px solid black;
-  box-shadow: 5px 5px black;
-  padding: 5px;
-  align-self: flex-end;
-}
-  
