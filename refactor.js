@@ -17,10 +17,8 @@ class ManageBooks {
     if (this.book_list) {
       this.book_list.forEach((book) => {
         const NewBook = ` 
-       <p>${book.name}</p>
-       <p>${book.author}</p>
+       <p>"${book.name}" by ${book.author}</p>
        <button onclick=RemoveBook(${book.id}) >Remove</button>
-       <hr>
        `;
         const Singlebook = document.createElement("div");
         Singlebook.classList.add("single-book");

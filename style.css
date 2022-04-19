@@ -1,3 +1,80 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+}
+
 body {
   text-align: center;
 }
+
+.container {
+  margin: 50px auto;
+  width: 50%;
+  text-align: center;
+}
+
+.container #book-list {
+  border: 5px solid black;
+}
+
+.container #book-list .single-book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container #book-list .single-book:nth-child(odd) {
+  background: gray;
+}
+
+.container #book-list .single-book p {
+  margin-left: 20px;
+}
+
+.container #book-list .single-book button {
+  margin-right: 20px;
+  border: 2px solid black;
+  box-shadow: 5px 5px black;
+  padding: 5px;
+}
+
+/* Add Section */
+hr {
+  margin-top: 20px;
+  width: 15%;
+  border-radius: 50%;
+  border-color: black;
+  border-style: groove;
+}
+
+.container #add-section {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.container #add-section .input-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+.container #add-section .input-button-wrapper input {
+  border: 5px solid black;
+  padding: 5px;
+}
+
+.container #add-section .input-button-wrapper input::placeholder {
+  color: black;
+}
+
+#add_Button {
+  border: 2px solid black;
+  box-shadow: 5px 5px black;
+  padding: 5px;
+  align-self: flex-end;
+}
+  
