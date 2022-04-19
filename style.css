@@ -7,6 +7,46 @@ body {
   text-align: center;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  border: 5px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #logo {
+  margin-left: 15px;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 10px;
+  margin-right: 15px;
+}
+
+header nav ul li a {
+  padding: 10px;
+  border-right-width: 5px;
+  border-right-color: black;
+  border-right-style: solid;
+}
+
+header nav ul li:last-child a{
+  border: none;
+}
+
 .container {
   margin: 50px auto;
   width: 50%;
