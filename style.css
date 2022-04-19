@@ -42,7 +42,7 @@ header nav ul {
 
 header nav ul li a {
   padding: 10px;
-  border-right-width: 5px;
+  border-right-width: 2.5px;
   border-right-color: black;
   border-right-style: solid;
 }
@@ -57,39 +57,45 @@ header nav ul li:last-child a {
   margin-bottom: 50px;
 }
 
-.list {
-  margin: 50px auto;
+#list {
+  margin: 50px auto 100px auto;
   width: calc(100% - 40px);
   text-align: center;
+  display: block;
 }
 
-.list #book-list {
+#list #book-list {
   border: 5px solid black;
   border-radius: 10px;
 }
 
-.list #book-list .single-book {
+#list #book-list .single-book {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
 }
 
-.list #book-list .single-book:nth-child(odd) {
+#list #book-list .single-book:nth-child(odd) {
   background: gray;
 }
 
-.list #book-list .single-book p {
+#list #book-list .single-book p {
   margin-left: 20px;
 }
 
-.list #book-list .single-book button {
+#list #book-list .single-book button {
   margin-right: 20px;
   border: 2px solid black;
   box-shadow: 5px 5px black;
-  padding: 5px;
+  padding: 10px 15px;
 }
 
 /* Add New Section */
+#add-new {
+  display: none;
+}
+
 #add-new #add-section {
   margin: 0 auto;
   display: flex;
@@ -132,6 +138,7 @@ header nav ul li:last-child a {
 #contact {
   margin: 0 auto;
   width: 40%;
+  display: none;
 }
 
 #contact h1 {

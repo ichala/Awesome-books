@@ -12,9 +12,8 @@ class SingleBook {
 
 class ManageBooks {
   constructor() {
-    this.book_list = localStorage.getItem('save')
-      ? JSON.parse(localStorage.getItem('save'))
-      : [];
+    this.book_list = localStorage.getItem('save') ?
+      JSON.parse(localStorage.getItem('save')) : [];
   }
 
   display() {
@@ -76,3 +75,30 @@ function RemoveBook(id) {
 //Last modified
 let lastMod = document.querySelector('#last-modified');
 lastMod.innerHTML = document.lastModified;
+
+//Navigation
+const navListBtn = document.querySelector('#nav-list');
+const navAddNewBtn = document.querySelector('#nav-add-new');
+const navContactBtn = document.querySelector('#nav-contact');
+
+const listSection = document.querySelector('#list');
+const addNewSection = document.querySelector('#add-new');
+const contactSection = document.querySelector('#contact');
+
+navListBtn.addEventListener('click', () => {
+listSection.style.display = "block";
+  addNewSection.style.display = "none";
+  contact.style.display = "none";
+})
+
+navAddNewBtn.addEventListener('click', () => {
+  addNewSection.style.display = "block";
+  listSection.style.display = "none";
+  contact.style.display = "none";
+})
+
+navContactBtn.addEventListener('click', () => {
+  contactSection.style.display = "block";
+  addNewSection.style.display = "none";
+  listSection.style.display = "none";
+})
