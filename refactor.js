@@ -1,5 +1,6 @@
 /* eslint-disable  no-restricted-globals */
 /* eslint-disable  no-unused-vars */
+/*eslint-disable class-methods-use-this*/
 class SingleBook {
   constructor(id, name, author) {
     this.id = id;
@@ -10,9 +11,9 @@ class SingleBook {
 
 class ManageBooks {
   constructor() {
-    this.book_list = localStorage.getItem("save") ?
-      JSON.parse(localStorage.getItem("save")) :
-      [];
+    this.book_list = localStorage.getItem("save")
+      ? JSON.parse(localStorage.getItem("save"))
+      : [];
   }
   display() {
     const BookList = document.querySelector("#book-list");
@@ -35,13 +36,13 @@ class ManageBooks {
     if (this.book_list.length > 0) {
       id = this.book_list[this.book_list.length - 1].id + 1;
     }
-    const NewBook = new SingleBook(id, name, author)
+    const NewBook = new SingleBook(id, name, author);
     this.book_list.push(NewBook);
     this.LocalSave(this.book_list);
   }
 
   LocalSave(arr) {
-    localStorage.setItem('save', JSON.stringify(arr));
+    localStorage.setItem("save", JSON.stringify(arr));
     location.reload();
   }
 
@@ -54,7 +55,6 @@ class ManageBooks {
     });
     this.LocalSave(this.book_list);
   }
-
 }
 
 let books = new ManageBooks();
@@ -69,5 +69,4 @@ AddBtn.addEventListener("click", () => {
 
 function RemoveBook(id) {
   books.delete(id);
-
 }
