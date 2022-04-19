@@ -5,6 +5,8 @@
 
 body {
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -22,6 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px 20px;
 }
 
 header #logo {
@@ -43,35 +46,36 @@ header nav ul li a {
   border-right-style: solid;
 }
 
-header nav ul li:last-child a{
+header nav ul li:last-child a {
   border: none;
 }
 
-.container {
+.list {
   margin: 50px auto;
-  width: 50%;
+  width: calc(100% - 40px);
   text-align: center;
 }
 
-.container #book-list {
+.list #book-list {
   border: 5px solid black;
+  border-radius: 10px;
 }
 
-.container #book-list .single-book {
+.list #book-list .single-book {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.container #book-list .single-book:nth-child(odd) {
+.list #book-list .single-book:nth-child(odd) {
   background: gray;
 }
 
-.container #book-list .single-book p {
+.list #book-list .single-book p {
   margin-left: 20px;
 }
 
-.container #book-list .single-book button {
+.list #book-list .single-book button {
   margin-right: 20px;
   border: 2px solid black;
   box-shadow: 5px 5px black;
@@ -87,31 +91,51 @@ hr {
   border-style: groove;
 }
 
-.container #add-section {
+.list #add-section {
   margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.container #add-section .input-button-wrapper {
+.list #add-section .input-button-wrapper {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.container #add-section .input-button-wrapper input {
+.list #add-section .input-button-wrapper input {
   border: 5px solid black;
   padding: 5px;
 }
 
-.container #add-section .input-button-wrapper input::placeholder {
+.list #add-section .input-button-wrapper input::placeholder {
   color: black;
 }
 
-.container #add-section #add_Button {
+.list #add-section #add_Button {
   align-self: flex-end;
   border: 2px solid black;
   box-shadow: 5px 5px black;
   padding: 5px;
+}
+
+footer {
+  display: block;
+  border: 5px solid black;
+  border-radius: 10px;
+  text-align: left;
+  position: fixed;
+  width: calc(100% - 40px);
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(15px);
+}
+
+footer h3 {
+  margin-left: 30px;
 }
