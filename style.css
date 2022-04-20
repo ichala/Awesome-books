@@ -18,7 +18,7 @@ a {
   text-decoration: none;
 }
 
-header {
+#nav-bar {
   border: 5px solid black;
   border-radius: 10px;
   display: flex;
@@ -27,11 +27,11 @@ header {
   margin: 10px 20px;
 }
 
-header #logo {
+#nav-bar #logo {
   margin-left: 15px;
 }
 
-header nav ul {
+#nav-bar nav ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -40,14 +40,14 @@ header nav ul {
   list-style-type: none;
 }
 
-header nav ul li a {
+#nav-bar nav ul li a {
   padding: 10px;
   border-right-width: 2.5px;
   border-right-color: black;
   border-right-style: solid;
 }
 
-header nav ul li:last-child a {
+#nav-bar nav ul li:last-child a {
   border: none;
 }
 
@@ -141,19 +141,19 @@ header nav ul li:last-child a {
   display: none;
 }
 
-#contact h1 {
+#contact #contact-wrapper h1 {
   margin-bottom: 50px;
 }
 
-#contact p {
+#contact #contact-wrapper .contact-text p {
   text-align: left;
 }
 
-#contact #contact-ul li {
+#contact #contact-wrapper #contact-ul li {
   margin: 0 auto;
 }
 
-#contact #contact-ul li p {
+#contact #contact-wrapper #contact-ul li p {
   width: 100%;
   text-align: left;
 }

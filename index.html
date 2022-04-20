@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="nav-bar">
         <a id="logo" href="#">Awesome Books</a>
         <nav>
             <ul>
@@ -22,12 +22,14 @@
         </nav>
     </header>
 
-    <section id="last-modified-container">
-        <small>Last Modified: <span id="last-modified">23.12.2020</span></small>
-    </section>
+    <div id="last-modified-container">
+            <small>Last Modified: <span id="last-modified">23.12.2020</span></small>
+    </div>
 
     <section id="list">
-        <h1>All awesome books</h1>
+        <header>
+            <h1>All awesome books</h1>
+        </header>
         <div id="book-list">
 
         </div>
@@ -35,19 +37,24 @@
 
     <section id="add-new">
         <div id="add-section">
-            <h1>Add a new book</h1>
+            <header>
+                <h1>Add a new book</h1>
+            </header>
             <div class="input-button-wrapper">
                 <input id="title" type="text" placeholder="Title">
                 <input id="author" type="text" placeholder="Author Name">
-                <button id="add_Button">Add</button>
+                <button type="button" id="add_Button">Add</button>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h1>Contact Information</h1>
-        <p>Do you have any questions or you just want to say "Hello"? </p>
-        <p>You can reach out to us!</p>
+        <div id="contact-wrapper">
+        <header>
+            <h1>Contact Information</h1>
+        </header>
+        <p class="contact-text">Do you have any questions or you just want to say "Hello"? </p>
+        <p class="contact-text">You can reach out to us!</p>
         <ul id="contact-ul">
             <li>
                 <p> e-mail mail@mail.com</p>
@@ -59,6 +66,7 @@
                 <p> adress: Baker Street 221B, London, England</p>
             </li>
         </ul>
+    </div>
     </section>
 
     <footer>
