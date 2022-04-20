@@ -11,6 +11,29 @@ body {
   text-align: center;
   padding: 0;
   margin: 0;
+  animation: animation 40s ease-in-out 0s infinite alternate forwards;
+}
+
+@keyframes animation {
+  0% {
+    background-color: #ca7;
+  }
+
+  25% {
+    background-color: #e98;
+  }
+
+  50% {
+    background-color: #544;
+  }
+
+  75% {
+    background-color: #fd9;
+  }
+
+  100% {
+    background-color: #eee;
+  }
 }
 
 a {
